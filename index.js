@@ -11,7 +11,10 @@ const path= require("path")
 
 
 /// connectivity
-connectDB(process.env.mongoDb_url).then(() => console.log('MongoDB Connected!')).catch((error) => console.log("Error" , error));
+connectDB(process.env.mongoDb_url, {
+    useNewUrlParser: true,
+    useUnifiedTopology: true,
+  }).then(() => console.log('MongoDB Connected!')).catch((error) => console.log("Error" , error));
 app.set("view engine","ejs")
 app.set("views",path.resolve("./views"))
 
