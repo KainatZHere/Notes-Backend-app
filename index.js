@@ -4,7 +4,6 @@ const app =express()
 const {connectDB} =require("./config")
 const notesRouter = require("./Routes/notesRoute")
 const userRouter = require("./Routes/usersRoute")
-const {restrictToVerifyToken}= require("./middlewears/notes")
 const swaggerUi = require('swagger-ui-express');
 const swaggerDocument = require('./swagger-output.json');
 const path= require("path")
@@ -25,6 +24,6 @@ app.use('/api-docs', swaggerUi.serve, swaggerUi.setup(swaggerDocument));
 
 //routes
 app.use("/",userRouter)
-app.use("/",restrictToVerifyToken,notesRouter)
+app.use("/",notesRouter)
 
 app.listen(PORT ,() =>{console.log(`Server connected on the Port ${PORT}`)})

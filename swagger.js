@@ -3,23 +3,12 @@ const swaggerAutogen = require('swagger-autogen')();
 
 const doc = {
   info: {
-    title: 'NoteProject',
-    description: 'Notes Project is Created by nodejs'
+    title: 'NoteProject Created with Nodejs and MongoDB-atlas',
+    description: 'Notes Project is Created by nodejs and MongoDB-atlas'
   },
   host: 'notes-backend-app-production.up.railway.app',
    schemes: ['https'],
-  components: {
-    securitySchemes: {
-      bearerAuth: {
-        type: 'http',
-        scheme: 'bearer',
-        bearerFormat: 'JWT'
-      }
-    }
-  },
-  security: [{
-    bearerAuth: []
-  }]
+ 
 };
 
 const outputFile = './swagger-output.json';
