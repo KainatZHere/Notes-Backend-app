@@ -5,10 +5,10 @@
     "description": "Notes Project is Created by nodejs",
     "version": "1.0.0"
   },
-  "host": "localhost:8000",
+  "host": "notes-backend-app-production.up.railway.app",
   "basePath": "/",
   "schemes": [
-    "http"
+    "https"
   ],
   "paths": {
     "/api/user/login": {
@@ -166,5 +166,19 @@
         }
       }
     }
-  }
+  },
+  "components": {
+    "securitySchemes": {
+      "bearerAuth": {
+        "type": "http",
+        "scheme": "bearer",
+        "bearerFormat": "JWT"
+      }
+    }
+  },
+  "security": [
+    {
+      "bearerAuth": []
+    }
+  ]
 }
